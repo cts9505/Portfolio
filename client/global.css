@@ -1,0 +1,340 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  /**
+   * Tailwind CSS theme
+   * tailwind.config.ts expects the following color variables to be expressed as HSL values.
+   * A different format will require also updating the theme in tailwind.config.ts.
+  */
+  :root {
+    --background: 214 32% 6%;
+    --foreground: 210 40% 98%;
+
+    --card: 214 32% 8%;
+    --card-foreground: 210 40% 98%;
+
+    --popover: 214 32% 8%;
+    --popover-foreground: 210 40% 98%;
+
+    --primary: 210 100% 56%;
+    --primary-foreground: 214 32% 6%;
+
+    --secondary: 214 32% 12%;
+    --secondary-foreground: 210 40% 98%;
+
+    --muted: 214 32% 12%;
+    --muted-foreground: 215 16% 65%;
+
+    --accent: 210 100% 56%;
+    --accent-foreground: 214 32% 6%;
+
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 214 32% 15%;
+    --input: 214 32% 15%;
+    --ring: 210 100% 56%;
+
+    --radius: 0.75rem;
+
+    --sidebar-background: 214 32% 8%;
+    --sidebar-foreground: 210 40% 98%;
+    --sidebar-primary: 210 100% 56%;
+    --sidebar-primary-foreground: 214 32% 6%;
+    --sidebar-accent: 214 32% 12%;
+    --sidebar-accent-foreground: 210 40% 98%;
+    --sidebar-border: 214 32% 15%;
+    --sidebar-ring: 210 100% 56%;
+  }
+
+  .dark {
+    --background: 214 32% 6%;
+    --foreground: 210 40% 98%;
+
+    --card: 214 32% 8%;
+    --card-foreground: 210 40% 98%;
+
+    --popover: 214 32% 8%;
+    --popover-foreground: 210 40% 98%;
+
+    --primary: 210 100% 56%;
+    --primary-foreground: 214 32% 6%;
+
+    --secondary: 214 32% 12%;
+    --secondary-foreground: 210 40% 98%;
+
+    --muted: 214 32% 12%;
+    --muted-foreground: 215 16% 65%;
+
+    --accent: 210 100% 56%;
+    --accent-foreground: 214 32% 6%;
+
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 214 32% 15%;
+    --input: 214 32% 15%;
+    --ring: 210 100% 56%;
+    --sidebar-background: 214 32% 8%;
+    --sidebar-foreground: 210 40% 98%;
+    --sidebar-primary: 210 100% 56%;
+    --sidebar-primary-foreground: 214 32% 6%;
+    --sidebar-accent: 214 32% 12%;
+    --sidebar-accent-foreground: 210 40% 98%;
+    --sidebar-border: 214 32% 15%;
+    --sidebar-ring: 210 100% 56%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+    font-family: "Poppins", sans-serif;
+  }
+}
+
+/* White Grid Background */
+.grid-bg {
+  background-image:
+    linear-gradient(rgba(255, 255, 255, 0.1) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.1) 1px, transparent 1px);
+  background-size: 50px 50px;
+  animation: moveGrid 20s linear infinite;
+}
+
+@keyframes moveGrid {
+  0% {
+    transform: translate(0, 0);
+  }
+  100% {
+    transform: translate(50px, 50px);
+  }
+}
+
+@keyframes grid {
+  0% {
+    transform: translate(0, 0);
+  }
+  100% {
+    transform: translate(40px, 40px);
+  }
+}
+
+/* Smooth Animations */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeInDown {
+  from {
+    opacity: 0;
+    transform: translateY(-30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeInLeft {
+  from {
+    opacity: 0;
+    transform: translateX(-30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes fadeInRight {
+  from {
+    opacity: 0;
+    transform: translateX(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes scaleIn {
+  from {
+    opacity: 0;
+    transform: scale(0.9);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes slideInFromBottom {
+  from {
+    opacity: 0;
+    transform: translateY(100px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes float {
+  0%,
+  100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-20px);
+  }
+}
+
+@keyframes pulse-glow {
+  0%,
+  100% {
+    box-shadow: 0 0 5px rgba(59, 130, 246, 0.5);
+  }
+  50% {
+    box-shadow: 0 0 20px rgba(59, 130, 246, 0.8);
+  }
+}
+
+.animate-fadeInUp {
+  animation: fadeInUp 0.6s ease-out forwards;
+}
+
+.animate-fadeInDown {
+  animation: fadeInDown 0.6s ease-out forwards;
+}
+
+.animate-fadeInLeft {
+  animation: fadeInLeft 0.6s ease-out forwards;
+}
+
+.animate-fadeInRight {
+  animation: fadeInRight 0.6s ease-out forwards;
+}
+
+.animate-scaleIn {
+  animation: scaleIn 0.6s ease-out forwards;
+}
+
+.animate-slideInFromBottom {
+  animation: slideInFromBottom 0.8s ease-out forwards;
+}
+
+.animate-float {
+  animation: float 6s ease-in-out infinite;
+}
+
+.animate-pulse-glow {
+  animation: pulse-glow 2s ease-in-out infinite;
+}
+
+/* Delay classes */
+.delay-100 {
+  animation-delay: 0.1s;
+}
+.delay-200 {
+  animation-delay: 0.2s;
+}
+.delay-300 {
+  animation-delay: 0.3s;
+}
+.delay-400 {
+  animation-delay: 0.4s;
+}
+.delay-500 {
+  animation-delay: 0.5s;
+}
+.delay-600 {
+  animation-delay: 0.6s;
+}
+.delay-700 {
+  animation-delay: 0.7s;
+}
+.delay-800 {
+  animation-delay: 0.8s;
+}
+.delay-900 {
+  animation-delay: 0.9s;
+}
+.delay-1000 {
+  animation-delay: 1s;
+}
+
+/* Hide default scrollbar */
+::-webkit-scrollbar {
+  width: 0px;
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: transparent;
+}
+
+/* Firefox */
+* {
+  scrollbar-width: none;
+}
+
+/* Top scroll indicator styles */
+.scroll-indicator {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 4px;
+  background: linear-gradient(
+    90deg,
+    rgb(59, 130, 246) 0%,
+    rgb(147, 197, 253) 50%,
+    rgb(59, 130, 246) 100%
+  );
+  z-index: 9999;
+  box-shadow: 0 0 20px rgba(59, 130, 246, 0.6);
+  transition: width 0.1s ease-out;
+}
+
+/* Additional glowing effects */
+@keyframes glow-pulse {
+  0%,
+  100% {
+    box-shadow:
+      0 0 20px rgba(59, 130, 246, 0.1),
+      0 0 40px rgba(59, 130, 246, 0.05),
+      inset 0 1px 0 rgba(255, 255, 255, 0.1);
+  }
+  50% {
+    box-shadow:
+      0 0 30px rgba(59, 130, 246, 0.2),
+      0 0 60px rgba(59, 130, 246, 0.1),
+      inset 0 1px 0 rgba(255, 255, 255, 0.15);
+  }
+}
+
+.glow-container {
+  animation: glow-pulse 4s ease-in-out infinite;
+}
+
+/* Hoverable glow effect */
+.hover-glow:hover {
+  box-shadow:
+    0 0 25px rgba(59, 130, 246, 0.3),
+    0 0 50px rgba(59, 130, 246, 0.15),
+    inset 0 1px 0 rgba(255, 255, 255, 0.2) !important;
+  transition: box-shadow 0.3s ease;
+}
