@@ -5,14 +5,14 @@
   "homepage": "https://chaitanyashinde.dev",
   "license": "MIT",
   "author": {
-    "name": "Nguyen Chaitanya Shinde",
-    "email": "dai@chaitanyashinde.dev",
+    "name": "Chaitanya Shinde",
+    "email": "connect@chaitanyashinde.dev",
     "url": "https://github.com/cts9505"
   },
   "contributors": [
     {
-      "name": "Nguyen Chaitanya Shinde",
-      "email": "dai@chaitanyashinde.dev",
+      "name": "Chaitanya Shinde",
+      "email": "connect@chaitanyashinde.dev",
       "url": "https://github.com/cts9505"
     }
   ],
@@ -33,7 +33,7 @@
     "generate-libphonenumber-metadata": "libphonenumber-metadata-generator ./src/assets/libphonenumber.metadata.json --countries VN --extended",
     "upgrade:next": "npx @next/codemod@latest upgrade latest",
     "upgrade:tailwind": "npx @tailwindcss/upgrade@latest",
-    "prepare": "husky"
+    "prepare": "husky || true"
   },
   "dependencies": {
     "@base-ui/react": "^1.4.1",
