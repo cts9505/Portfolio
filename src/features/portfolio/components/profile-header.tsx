@@ -1,0 +1,62 @@
+import { USER } from "@/features/portfolio/data/user"
+import { AvatarLights } from "@/registry/components/avatar-lights"
+import { TextFlip } from "@/registry/components/text-flip"
+
+import { AvatarLightsToggle } from "./avatar-lights-toggle"
+import { VerifiedIcon } from "./verified-icon"
+
+export function ProfileHeader() {
+  return (
+    <div className="screen-line-bottom flex border-x border-line">
+      <div className="shrink-0 border-r border-line">
+        <AvatarLightsToggle className="group/avatar-lights-toggle mx-px my-0.5 flex items-end outline-none">
+  <AvatarLights
+    className="ring-[#fbbf24] ring-offset-2 ring-offset-background group-focus-visible/avatar-lights-toggle:ring-2 dark:ring-[#FFC799]"
+    variants={USER.avatarVariants}
+  />
+</AvatarLightsToggle>
+      </div>
+
+      <div className="flex flex-1 flex-col">
+        <div className="flex grow items-end pb-1 pl-4">
+          <div
+            className="line-clamp-1 font-mono text-xs text-zinc-300 select-none max-sm:hidden dark:text-zinc-800"
+            aria-hidden
+          >
+            {"text-3xl "}
+            <span className="inline dark:hidden">text-zinc-950</span>
+            <span className="hidden dark:inline">text-zinc-50</span>
+            {" font-medium"}
+          </div>
+        </div>
+
+        <div className="border-t border-line">
+          <div className="flex items-center gap-2 pl-4">
+            <h1 className="-translate-y-px text-3xl font-semibold tracking-tight">
+              {USER.displayName}
+            </h1>
+
+            <VerifiedIcon
+              className="size-4.5 text-info select-none"
+              aria-label="Verified"
+            />
+          </div>
+
+          <div className="h-12.5 border-t border-line py-1 pl-4 sm:h-9">
+            <TextFlip
+              className="font-mono text-sm text-balance text-muted-foreground"
+              variants={{
+                initial: { y: -10, opacity: 0 },
+                animate: { y: -1, opacity: 1 },
+                exit: { y: 10, opacity: 0 },
+              }}
+              interval={1.5}
+            >
+              {USER.flipSentences}
+            </TextFlip>
+          </div>
+        </div>
+      </div>
+    </div>
+  )
+}
